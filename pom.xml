@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>valg-libs</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>Libriaries used by Valgdirektoratet</name>
+    <url>https://github.com/HNygard/valgprotokoller/</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <!-- Used to create PDF in elections in 2019 -->
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>2.1.7</version>
+        </dependency>
+        <dependency>
+            <!-- Used to create PDF in elections in 2019 -->
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>5.6.1</version>
+        </dependency>
+
+    </dependencies>
+</project>
