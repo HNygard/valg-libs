@@ -15,6 +15,22 @@
     </properties>
 
     <dependencies>
+        <!--
+        Creator:        JasperReports Library version 5.6.1
+        Producer:       iText 2.1.7 by 1T3XT
+        -->
+
+        <!--
+        Author:         ESAadmin
+        Creator:        JasperReports Library version 5.6.1
+        Producer:       PixEdit AS,  PixEdit Version 8.2.0.40
+        -->
+
+        <!--
+        Author:         ESAadmin
+        Creator:        Canon iR-ADV C256  PDF
+        Producer:       PixEdit AS,  PixEdit Version 8.2.2.1
+        -->
         <dependency>
             <!-- Used to create PDF in elections in 2019 -->
             <groupId>com.lowagie</groupId>
