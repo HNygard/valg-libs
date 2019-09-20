@@ -28,86 +28,11 @@
         <testDatabaseName>evote</testDatabaseName>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <slf4j.version>1.8.0-beta2</slf4j.version>
-        <bc-jdk15on.version>1.60</bc-jdk15on.version>
-        <poi.version>3.17</poi.version>
     </properties>
 
     <!-- Brukes for å definere versjonene til bibliotekene vi bruker i submodulene våre. 
          Versjonene til avhengighetene skal alltid være her (og ikke i submodulene) -->
-    <dependencyManagement>
         <dependencies>
-            <!-- Interne avhengigheter -->
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-common</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-configuration</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-counting</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-rbac</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-settlement</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-valgnatt</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-voting</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-
-            <!-- Interne avhengigheter, test -->
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-common</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-                <type>test-jar</type>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-configuration</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-                <type>test-jar</type>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-counting</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-                <type>test-jar</type>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-backend-common</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-backend-testtools</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>no.valg.eva</groupId>
-                <artifactId>admin-integration</artifactId>
-                <version>2019.22-SNAPSHOT</version>
-            </dependency>
 
             <!-- Eksterne avhengigheter -->
             <dependency>
@@ -231,7 +156,7 @@
                 <!-- API for å aksessere Microsoft Office-dokumenter -->
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
-                <version>${poi.version}</version>
+                <version>3.17</version>
             </dependency>
             <dependency>
                 <!-- Hjelpeklasser for java.lang -->
@@ -254,7 +179,7 @@
                 <!-- POI-biblioteket for OpenXML4J -->
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
-                <version>${poi.version}</version>
+                <version>3.17</version>
                 <exclusions>
                     <exclusion>
                         <groupId>dom4j</groupId>
@@ -283,14 +208,14 @@
                 <!-- Java-implementasjon av krypto-algoritmer -->
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcprov-jdk15on</artifactId>
-                <version>${bc-jdk15on.version}</version>
+                <version>1.60</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <!-- Diverse APIer til BouncyCastle, blant annet CMS, PKCS og sertifikatgenerering -->
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcpkix-jdk15on</artifactId>
-                <version>${bc-jdk15on.version}</version>
+                <version>1.60</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -516,7 +441,7 @@
                 <!-- SLF4J er en "logg wrapper", som gir et implementasjons-uavhengig logg-api -->
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
+                <version>1.8.0-beta2</version>
             </dependency>
             <dependency>
                 <!-- Spock er et enhetstestrammeverk for Groovy. Brukes av enhetstestene for Jenkins-koden -->
@@ -569,16 +494,12 @@
                 <artifactId>xml-apis</artifactId>
                 <version>1.4.01</version>
             </dependency>
+            <!-- Lombok er med her fordi vi ønsker å bruke det i hele prosjektet -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+            </dependency>
         </dependencies>
-    </dependencyManagement>
-
-    <dependencies>
-        <!-- Lombok er med her fordi vi ønsker å bruke det i hele prosjektet -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
 
     <build>
         <!-- Hensikten med denne delen er å ha felles styring på versjoner av plugins som er brukt.
